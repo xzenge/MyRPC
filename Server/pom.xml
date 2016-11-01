@@ -12,6 +12,15 @@
     <artifactId>Server</artifactId>
 
     <dependencies>
+        <!-- Protostuff -->
+        <dependency>
+            <groupId>com.dyuproject.protostuff</groupId>
+            <artifactId>protostuff-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.dyuproject.protostuff</groupId>
+            <artifactId>protostuff-runtime</artifactId>
+        </dependency>
         <!--Netty-->
         <dependency>
             <groupId>io.netty</groupId>

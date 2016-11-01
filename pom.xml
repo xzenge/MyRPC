@@ -26,11 +26,24 @@
         <springframework.security.version>3.2.5.RELEASE</springframework.security.version>
         <lombok.version>1.14.4</lombok.version>
         <netty.version>4.1.6.Final</netty.version>
+        <protostuff.core.version>1.0.12</protostuff.core.version>
+        <protostuff.runtime.version>1.0.12</protostuff.runtime.version>
     </properties>
 
 
     <dependencyManagement>
         <dependencies>
+            <!-- Protostuff -->
+            <dependency>
+                <groupId>com.dyuproject.protostuff</groupId>
+                <artifactId>protostuff-core</artifactId>
+                <version>${protostuff.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dyuproject.protostuff</groupId>
+                <artifactId>protostuff-runtime</artifactId>
+                <version>${protostuff.runtime.version}</version>
+            </dependency>
             <!--Netty-->
             <dependency>
                 <groupId>io.netty</groupId>
