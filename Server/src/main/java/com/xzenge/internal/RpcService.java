@@ -1,4 +1,4 @@
-package internal;
+package com.xzenge.internal;
 
 import org.springframework.stereotype.Component;
 

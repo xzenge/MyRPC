@@ -11,17 +11,26 @@
 
     <artifactId>Server</artifactId>
 
-    <properties>
-        <commons.logging.version>1.2</commons.logging.version>
-        <log4j.version>1.2.17</log4j.version>
-        <slf4j.version>1.7.7</slf4j.version>
-        <springframework.version>4.1.1.RELEASE</springframework.version>
-        <spring.context.support.version>4.0.3.RELEASE</spring.context.support.version>
-        <springframework.security.version>3.2.5.RELEASE</springframework.security.version>
-    </properties>
-
-
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!--zookeeper-->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>zookeeper</artifactId>
+        </dependency>
+        <!--log-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-1.2-api</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
         <!-- spring -->
         <dependency>
             <groupId>org.springframework</groupId>
