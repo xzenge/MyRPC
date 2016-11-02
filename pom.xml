@@ -28,6 +28,7 @@
         <netty.version>4.1.6.Final</netty.version>
         <protostuff.core.version>1.0.12</protostuff.core.version>
         <protostuff.runtime.version>1.0.12</protostuff.runtime.version>
+        <javac.target.version>1.7</javac.target.version>
     </properties>
 
 
