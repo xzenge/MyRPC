@@ -22,6 +22,11 @@ public class RpcClient extends SimpleChannelInboundHandler<RpcResponse> {
     private RpcResponse response;
     private final Object lock = new Object();
 
+    public RpcClient(String host, int port) {
+        this.host = host;
+        this.port = port;
+    }
+
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, RpcResponse rpcResponse) throws Exception {
         this.response = rpcResponse;
