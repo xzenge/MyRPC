@@ -1,4 +1,4 @@
-package com.xzenge.server.service;
+package com.xzenge.api.client;
 
 /**
  * Created by Administrator on 2016/11/1.

@@ -1,5 +1,6 @@
 package com.xzenge.server.service;
 
+import com.xzenge.api.client.HelloService;
 import com.xzenge.server.rpc.internal.RpcService;
 
 /**
