@@ -11,6 +11,10 @@
         <constructor-arg name="registryAddress" value="${registry.address}"/>
     </bean>
 
+    <bean id="rpcProxy" class="com.xzenge.client.rpc.proxy.RpcProxy">
+        <constructor-arg name="serverAddress" value="${server.address}"></constructor-arg>
+        <constructor-arg name="serviceDiscovery" ref="serviceDiscovery"></constructor-arg>
+    </bean>
 
 
 </beans>

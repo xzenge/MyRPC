@@ -1,12 +1,10 @@
 package com.xzenge.api.zk;
 
 
+import com.xzenge.api.utils.ConfigResource;
 import com.xzenge.api.utils.StringUtils;
 import org.apache.log4j.Logger;
-import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -65,6 +63,27 @@ public class ZKservice {
             logger.error("watchNode InterruptedException error:" + e);
         }
 
+    }
+
+    /**
+     * 创建节点
+     * @param zk
+     * @param data
+     */
+    public static void createNode(ZooKeeper zk, String data) {
+        try {
+            byte[] bytes = data.getBytes();
+
+            String registryPath = ConfigResource.getSystemProperty("zookeeper.registry.path");
+
+            String path = zk.create(registryPath, bytes, ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
+
+            logger.info("create node path:" + path + ",date:" + data);
+        } catch (KeeperException e) {
+            logger.error("createNode KeeperException: " + e);
+        } catch (InterruptedException e) {
+            logger.error("createNode InterruptedException: " + e);
+        }
     }
 
 }
