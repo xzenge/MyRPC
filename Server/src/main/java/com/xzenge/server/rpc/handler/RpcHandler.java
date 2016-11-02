@@ -1,7 +1,7 @@
-package com.xzenge.handler;
+package com.xzenge.server.rpc.handler;
 
-import com.xzenge.model.RpcRequest;
-import com.xzenge.model.RpcResponse;
+import com.xzenge.api.model.RpcRequest;
+import com.xzenge.api.model.RpcResponse;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -9,8 +9,6 @@ import org.apache.log4j.Logger;
 import org.springframework.cglib.reflect.FastClass;
 import org.springframework.cglib.reflect.FastMethod;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Map;
 
 /**
@@ -61,7 +59,7 @@ public class RpcHandler extends SimpleChannelInboundHandler<RpcRequest> {
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         super.exceptionCaught(ctx, cause);
-        logger.error("server caught exception" + cause);
+        logger.error("service caught exception" + cause);
         ctx.close();
     }
 }

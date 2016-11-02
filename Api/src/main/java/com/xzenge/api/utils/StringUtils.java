@@ -1,4 +1,4 @@
-package com.xzenge.utils;
+package com.xzenge.api.utils;
 
 import org.apache.log4j.Logger;
 

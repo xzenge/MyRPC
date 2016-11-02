@@ -1,4 +1,4 @@
-package com.xzenge.internal;
+package com.xzenge.server.rpc.internal;
 
 import org.springframework.stereotype.Component;
 

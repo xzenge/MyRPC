@@ -1,6 +1,6 @@
-package com.xzenge.model;
+package com.xzenge.api.model;
 
-import com.xzenge.utils.SerializationUtil;
+import com.xzenge.api.utils.SerializationUtil;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;

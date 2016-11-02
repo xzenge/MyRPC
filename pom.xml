@@ -11,6 +11,7 @@
     <modules>
         <module>Server</module>
         <module>Client</module>
+        <module>Api</module>
     </modules>
 
     <url>http://maven.apache.org</url>
@@ -29,11 +30,17 @@
         <protostuff.core.version>1.0.12</protostuff.core.version>
         <protostuff.runtime.version>1.0.12</protostuff.runtime.version>
         <javac.target.version>1.7</javac.target.version>
+        <xzengeApi.version>1.0-SNAPSHOT</xzengeApi.version>
     </properties>
 
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.xzenge</groupId>
+                <artifactId>Api</artifactId>
+                <version>${xzengeApi.version}</version>
+            </dependency>
             <!-- Protostuff -->
             <dependency>
                 <groupId>com.dyuproject.protostuff</groupId>

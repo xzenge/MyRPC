@@ -1,11 +1,9 @@
-package com.xzenge.registry;
+package com.xzenge.server.rpc.registry;
 
-
-import com.xzenge.utils.ConfigResource;
-import com.xzenge.utils.StringUtils;
+import com.xzenge.api.utils.ConfigResource;
+import com.xzenge.api.utils.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.zookeeper.*;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;

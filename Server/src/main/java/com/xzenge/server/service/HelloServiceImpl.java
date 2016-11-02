@@ -1,6 +1,6 @@
-package com.xzenge.server;
+package com.xzenge.server.service;
 
-import com.xzenge.internal.RpcService;
+import com.xzenge.server.rpc.internal.RpcService;
 
 /**
  * Created by Administrator on 2016/11/1.

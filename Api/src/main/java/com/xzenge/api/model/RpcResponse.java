@@ -1,4 +1,4 @@
-package com.xzenge.model;
+package com.xzenge.api.model;
 
 import lombok.Data;
 

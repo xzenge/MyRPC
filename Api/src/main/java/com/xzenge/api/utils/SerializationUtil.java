@@ -1,4 +1,4 @@
-package com.xzenge.utils;
+package com.xzenge.api.utils;
 
 import com.dyuproject.protostuff.LinkedBuffer;
 import com.dyuproject.protostuff.ProtobufIOUtil;
@@ -8,7 +8,6 @@ import com.dyuproject.protostuff.runtime.RuntimeSchema;
 import org.apache.log4j.Logger;
 import org.springframework.objenesis.Objenesis;
 import org.springframework.objenesis.ObjenesisStd;
-import org.springframework.stereotype.Service;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
