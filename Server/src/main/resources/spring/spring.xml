@@ -13,6 +13,12 @@
             <constructor-arg name="registryAddress" value="${registry.address}"></constructor-arg>
         </bean>
 
+        <!--配置 RPC 服务器-->
+        <bean id="rpcServer" class="com.xzenge.rpc.RpcServer">
+            <constructor-arg name="serverAddress" value="${server.address}"/>
+            <constructor-arg name="serviceRegistry" ref="serviceRegistry"/>
+        </bean>
+
 
     </beans>
 </beans>
