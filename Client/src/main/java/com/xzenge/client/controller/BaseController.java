@@ -1,6 +1,5 @@
 package com.xzenge.client.controller;
 
-
 import com.xzenge.api.client.HelloService;
 import com.xzenge.client.rpc.proxy.RpcProxy;
 import org.apache.log4j.Logger;
