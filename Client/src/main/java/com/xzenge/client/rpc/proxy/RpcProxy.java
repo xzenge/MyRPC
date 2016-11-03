@@ -46,7 +46,9 @@ public class RpcProxy {
                     serverAddress = serviceDiscovery.discover();
                 }
 
-                String[] array = serverAddress.split(":");
+                String aaa = "127.0.0.1:8000";
+                String[] array = aaa.split(":");
+//                String[] array = serverAddress.split(":");
                 String host = array[0];
                 int port = StringUtils.toInt(array[1]);
 

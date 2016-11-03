@@ -31,6 +31,7 @@ public class ServiceRegistry {
                     , latch);
 
             if (zk != null) {
+                ZKservice.AddRootNode(zk);
                 ZKservice.createNode(zk, data);
             }
         }

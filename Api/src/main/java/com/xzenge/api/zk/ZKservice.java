@@ -5,6 +5,7 @@ import com.xzenge.api.utils.ConfigResource;
 import com.xzenge.api.utils.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.zookeeper.*;
+import org.apache.zookeeper.data.Stat;
 
 import java.io.IOException;
 import java.util.List;
@@ -26,7 +27,7 @@ public class ZKservice {
         int zkSessionTimeout = "".equals(timeOut) ? 5000 : StringUtils.toInt(timeOut);
 
         try {
-            new ZooKeeper(registryAddress, zkSessionTimeout, new Watcher() {
+            zk = new ZooKeeper(registryAddress, zkSessionTimeout, new Watcher() {
                 public void process(WatchedEvent watchedEvent) {
                     //
                     if (watchedEvent.getState() == Event.KeeperState.SyncConnected) {
@@ -34,7 +35,9 @@ public class ZKservice {
                     }
                 }
             });
-            latch.await();
+            if(ZooKeeper.States.CONNECTING == zk.getState()){
+                latch.await();
+            }
         } catch (IOException ioe) {
             logger.error("connectServer IOException:" + ioe);
         } catch (InterruptedException iee) {
@@ -83,6 +86,21 @@ public class ZKservice {
             logger.error("createNode KeeperException: " + e);
         } catch (InterruptedException e) {
             logger.error("createNode InterruptedException: " + e);
+        }
+    }
+
+    public static void AddRootNode(ZooKeeper zk){
+        try {
+            String registryPath = ConfigResource.getSystemProperty("zookeeper.registry.path");
+
+            Stat s = zk.exists(registryPath, false);
+            if (s == null) {
+                zk.create(registryPath, new byte[0], ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+            }
+        } catch (KeeperException e) {
+            logger.error(e.toString());
+        } catch (InterruptedException e) {
+            logger.error(e.toString());
         }
     }
 
